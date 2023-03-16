@@ -24,7 +24,7 @@ node {
    stage('Package & Deploy') {
        withEnv(['PATH+EXTRA=/opt/apache-maven-3.6.3/bin']) {
             sh 'mvn package'
-            sh 'curl --upload-file target/simplewebapp.war "http://deployer:deployer@54.172.48.238:8080/manager/text/deploy?path=/byjenkins&update=true"'
+            sh 'curl --upload-file target/simplewebapp.war "http://tomcat:tomcat@54.172.48.238:8080/manager/text/deploy?path=/byjenkins&update=true"'
        }
    }
    
