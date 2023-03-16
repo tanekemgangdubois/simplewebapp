@@ -24,4 +24,4 @@ jobs:
       run: mvn -B package --file pom.xml
     - run: mkdir deployment && cp target/*.war deployment
     - run: pwd && ls && ls target/* && ls deployment/*
-    - run: curl --upload-file deployment/simplewebapp.war "http://deployer:deployer@34.72.215.214:8081/manager/text/deploy?path=/githubaction&update=true"
+    - run: curl --upload-file deployment/simplewebapp.war "http://tomcat:tomcat@54.172.48.238:8080/manager/text/deploy?path=/githubaction&update=true"
